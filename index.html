@@ -285,6 +285,98 @@ header :focus-visible{outline-color:#fff}
 .upgrade{border-radius:14px}
 .note{border-left-color:var(--accent-2)}
 .toast{background:var(--accent);color:var(--accent-ink);box-shadow:0 8px 24px rgba(29,95,209,.35)}
+
+/* ===== Listening ===== */
+@media (max-width:420px){nav button{font-size:.84rem;padding:7px 6px}}
+.lsetup{display:grid;gap:12px;margin-bottom:14px}
+@media (min-width:760px){.lsetup{grid-template-columns:1fr 1.4fr}}
+.fld{display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:.9rem}
+.fld small{font-weight:400;color:var(--muted)}
+.fld input,.qrow input,.keypaste textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface);font-weight:400;font-size:1rem}
+.fld input:focus,.qrow input:focus,.keypaste textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent)}
+.fld .row{display:flex;gap:8px}
+.vwrap{margin-bottom:14px;background:var(--bg);z-index:4}
+.vwrap.pinned{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hh,64px));padding:6px 0}
+.video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;max-width:760px;margin:0 auto}
+.vwrap.pinned .video{max-width:420px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vtools{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.vtools a{color:var(--accent);font-weight:600;font-size:.9rem;align-self:center}
+.steps{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.steps .btn{flex:1;flex-direction:column;justify-content:center;align-items:center;gap:0;min-width:0;padding:8px 6px;line-height:1.25;white-space:nowrap}
+.steps .btn small{font-weight:500;opacity:.8;font-size:.78rem}
+#sec-listening ~ .toast,.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.qpanel{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:6px 16px 14px}
+.qpanel h2{font-size:1.05rem;margin:10px 0 4px;font-weight:700}
+.qpanel .sub{color:var(--muted);font-size:.85rem;margin:0 0 6px}
+.qrow{display:grid;grid-template-columns:40px 1fr;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.qrow:last-of-type{border-bottom:0}
+.qrow.check{grid-template-columns:40px 1fr 1fr 42px}
+@media (max-width:640px){.qrow.check{grid-template-columns:40px 1fr 42px}.qrow.check .key{grid-column:2;grid-row:2}}
+.qnum{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-weight:700;background:var(--surface-2);font-variant-numeric:tabular-nums}
+.qrow.r .qnum{background:var(--good-bg);color:var(--good)}
+.qrow.w .qnum{background:var(--warn-bg);color:var(--warn)}
+.qrow .key{background:var(--surface-2)}
+.mark{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:800;font-size:1.05rem;color:var(--muted);position:relative}
+.mark.r{background:var(--good-bg);color:var(--good);border-color:var(--good)}
+.mark.w{background:var(--warn-bg);color:var(--warn);border-color:var(--warn)}
+.mark.ov::after{content:"";position:absolute;top:4px;right:4px;width:6px;height:6px;border-radius:50%;background:currentColor}
+.keypaste{margin-bottom:14px}
+.keypaste summary{cursor:pointer;font-weight:700}
+.keypaste textarea{margin-top:10px;font-family:var(--sans);resize:vertical;min-height:140px}
+.small{font-size:.85rem;color:var(--muted);margin:8px 0 0}
+.lnav{position:sticky;bottom:0;z-index:3;display:flex;gap:6px;align-items:center;overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px 14px 0 0;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));margin-top:16px;box-shadow:0 -6px 18px rgba(0,0,0,.06)}
+.lnav .pt{border:1px solid var(--line);background:var(--surface-2);border-radius:10px;padding:6px 10px;white-space:nowrap;font-weight:600;font-size:.82rem;cursor:pointer}
+.lnav .pt.cur{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);cursor:default}
+.lnav .num{flex:none;min-width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:.82rem;cursor:pointer;font-variant-numeric:tabular-nums}
+.lnav .num.done{background:color-mix(in srgb,var(--accent) 16%,var(--surface));border-color:var(--accent);color:var(--accent)}
+.lnav .num.r{background:var(--good);border-color:var(--good);color:#fff}
+.lnav .num.w{background:var(--warn);border-color:var(--warn);color:#fff}
+.lnav .count{margin-left:auto;white-space:nowrap}
+.lres{display:grid;gap:14px}
+@media (min-width:860px){.lres{grid-template-columns:1fr 1fr}}
+.bandcard{text-align:center;padding:24px 18px}
+.bandcard .big{font-size:4.2rem;font-weight:800;line-height:1;color:var(--accent);letter-spacing:-.04em;margin:6px 0}
+.bandcard .raw{font-size:1.1rem;font-weight:600}
+.parts{display:grid;gap:8px;margin-top:16px;text-align:left}
+.ctable{width:100%;border-collapse:collapse;font-size:.92rem}
+.ctable th,.ctable td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left;font-variant-numeric:tabular-nums}
+.ctable tr.hit td{background:color-mix(in srgb,var(--accent) 14%,var(--surface));font-weight:700}
+.wlist{margin:0;padding:0;list-style:none}
+.wlist li{display:grid;grid-template-columns:36px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.wlist s{color:var(--warn)}
+.wlist b{color:var(--good)}
+.hist li{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.hist li span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hist li b{color:var(--accent)}
+.hist button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:1.1rem;padding:4px 8px}
+
+/* listening: red for wrong, check-method chooser */
+:root{--bad:#D92D20;--bad-bg:#FDECEA}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bad:#F97066;--bad-bg:#3A1716}}
+:root[data-theme="dark"]{--bad:#F97066;--bad-bg:#3A1716}
+.qrow.w .qnum{background:var(--bad-bg);color:var(--bad)}
+.mark.w{background:var(--bad-bg);color:var(--bad);border-color:var(--bad)}
+.lnav .num.w{background:var(--bad);border-color:var(--bad);color:#fff}
+.wlist s{color:var(--bad)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.qrow.tickrow{grid-template-columns:40px 1fr auto}
+.tick{display:flex;gap:6px}
+.tk{width:44px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:800;font-size:1.1rem;color:var(--muted)}
+.tk.r:hover{border-color:var(--good);color:var(--good)}
+.tk.w:hover{border-color:var(--bad);color:var(--bad)}
+.tk.r.on{background:var(--good);border-color:var(--good);color:#fff}
+.tk.w.on{background:var(--bad);border-color:var(--bad);color:#fff}
+.cmchoose h3{margin:0 0 12px}
+.cmgrid{display:grid;gap:10px}
+@media (min-width:640px){.cmgrid{grid-template-columns:1fr 1fr}}
+.cmopt{text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:14px;padding:16px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.cmopt:hover{border-color:var(--accent)}
+.cmopt b{font-size:1.02rem}
+.cmopt span{color:var(--muted);font-size:.9rem}
+.seg{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;margin-bottom:12px}
+.seg button{flex:1;border:0;background:transparent;border-radius:999px;padding:8px 10px;font-weight:600;font-size:.88rem;cursor:pointer;color:var(--muted)}
+.seg button[aria-checked=true]{background:var(--accent);color:var(--accent-ink)}
 </style>
 </head>
 <body>
@@ -294,7 +386,8 @@ header :focus-visible{outline-color:#fff}
   <nav role="tablist" aria-label="Sections">
    <button role="tab" id="tab-vocab" aria-controls="sec-vocab" aria-selected="true">Vocabulary</button>
    <button role="tab" id="tab-synonyms" aria-controls="sec-synonyms" aria-selected="false">Synonyms</button>
-   <button role="tab" id="tab-writing" aria-controls="sec-writing" aria-selected="false">Writing Templates</button>
+   <button role="tab" id="tab-writing" aria-controls="sec-writing" aria-selected="false">Writing</button>
+   <button role="tab" id="tab-listening" aria-controls="sec-listening" aria-selected="false">Listening</button>
   </nav>
   <button class="icon-btn" id="theme" aria-label="Switch to dark mode" title="Light / dark mode"></button>
  </div>
@@ -333,6 +426,19 @@ header :focus-visible{outline-color:#fff}
  <div class="intro"><h1>Writing templates</h1><p lang="th">เติมคำในช่องว่าง ดูจำนวนคำแต่ละย่อหน้าแบบเรียลไทม์ แล้วเทียบกับคำตอบตัวอย่าง Band 7+</p></div>
  <div class="picker" id="w-picker"></div>
  <div id="w-body"></div>
+</section>
+
+<section id="sec-listening" role="tabpanel" aria-labelledby="tab-listening" hidden>
+ <div class="intro"><h1>Listening answer sheet</h1><p lang="th">กระดาษคำตอบแบบ Computer-delivered 40 ข้อ ฟังคลิปไปพร้อมตอบ แล้วตรวจและดู Band ได้ทันที</p></div>
+ <div class="panel lsetup">
+  <label class="fld"><span>Test name <small lang="th">ชื่อชุดข้อสอบ</small></span><input id="l-name" type="text" placeholder="e.g. Cambridge 18 · Test 2" autocomplete="off"></label>
+  <div class="fld"><label for="l-yt">YouTube video <small lang="th">วางลิงก์คลิปเพื่อดูในหน้านี้ (ไม่บังคับ)</small></label>
+   <div class="row"><input id="l-yt" type="url" placeholder="https://www.youtube.com/watch?v=…" autocomplete="off"><button class="btn primary" id="l-load">Load</button></div></div>
+ </div>
+ <div id="l-videobox"></div>
+ <div class="steps" id="l-steps" role="group" aria-label="Steps"></div>
+ <div id="l-body"></div>
+ <div class="lnav" id="l-nav" aria-label="Question navigator"></div>
 </section>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -1537,14 +1643,173 @@ function wUpdate(){
   $('#w-preview').innerHTML=t.paragraphs.map((p,i)=>`<p>${esc(paraText(p,i,false)).replace(/_____/g,'<span class="gap">_____</span>')}</p>`).join('');
 }
 
+
+/* ===================== LISTENING ===================== */
+// Raw score → band, from the IELTS Listening score table (ielts.com.au / IDP)
+const BANDS=[[39,9],[37,8.5],[35,8],[32,7.5],[30,7],[26,6.5],[23,6],[18,5.5],[16,5],[13,4.5],[11,4]];
+const bandOf=n=>{ for(const [m,b] of BANDS) if(n>=m) return b; return null; };
+const fmtBand=b=>b==null?'< 4.0':b.toFixed(1);
+const blankL=()=>({name:'',video:'',ans:Array(40).fill(''),key:Array(40).fill(''),ov:Array(40).fill(null),tick:Array(40).fill(null),checkMode:null,part:0,mode:'answer',pinned:false});
+const L=Object.assign(blankL(),store.get('l.session',{}));
+['ans','key','ov','tick'].forEach(k=>{ if(!Array.isArray(L[k])||L[k].length!==40) L[k]=blankL()[k]; });
+let lHist=store.get('l.history',[]);
+const lSave=()=>store.set('l.session',{name:L.name,video:L.video,ans:L.ans,key:L.key,ov:L.ov,tick:L.tick,checkMode:L.checkMode,part:L.part,mode:L.mode,pinned:L.pinned});
+function norm(s){ return String(s||'').toLowerCase().replace(/[’‘`]/g,"'").replace(/\s*-\s*/g,'-').replace(/\s+/g,' ').replace(/^[\s"'(]+|[\s".,;:!?)]+$/g,'').trim(); }
+function variants(k){ const out=new Set(); String(k).split(/\s*(?:\/|\||\bor\b)\s*/i).forEach(alt=>{ if(!alt.trim()) return;
+  out.add(norm(alt.replace(/[()]/g,''))); out.add(norm(alt.replace(/\([^)]*\)/g,' '))); }); out.delete(''); return [...out]; }
+function letterSet(x){ const t=String(x).toUpperCase().replace(/\bAND\b|&/g,',').trim(); return /^[A-K](\s*[,\s]\s*[A-K])+$/.test(t)? t.split(/[\s,]+/).sort().join(''):null; }
+function autoMark(i){ const k=L.key[i]; if(!String(k).trim()) return null; const a=L.ans[i]; if(!norm(a)) return 'w';
+  const lk=letterSet(k); if(lk) return letterSet(a)===lk?'r':'w';
+  return variants(k).includes(norm(a))?'r':'w'; }
+const markOf=i=>L.checkMode==='tick' ? L.tick[i] : L.checkMode==='key' ? (L.ov[i]||autoMark(i)) : null;
+function lScore(){ let r=0,unmarked=0; const per=[0,0,0,0]; for(let i=0;i<40;i++){ const m=markOf(i); if(m==='r'){ r++; per[Math.floor(i/10)]++; } else if(!m) unmarked++; } return {r,per,unmarked}; }
+function ytId(u){ u=String(u).trim(); const m=u.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([A-Za-z0-9_-]{11})/); return m?m[1]:(/^[A-Za-z0-9_-]{11}$/.test(u)?u:null); }
+function setHH(){ document.documentElement.style.setProperty('--hh',document.querySelector('header').offsetHeight+'px'); }
+window.addEventListener('resize',setHH);
+
+function lVideo(){
+  const box=$('#l-videobox');
+  if(!L.video){ box.innerHTML=''; return; }
+  box.innerHTML=`<div class="vwrap ${L.pinned?'pinned':''}"><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${L.video}?rel=0&playsinline=1" title="IELTS Listening video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+   <div class="vtools"><button class="btn" id="l-pin" aria-pressed="${L.pinned}">${L.pinned?'Unpin video':'Pin video while scrolling'}</button><button class="btn" id="l-unload">Remove video</button><a href="https://www.youtube.com/watch?v=${L.video}" target="_blank" rel="noopener">Open on YouTube ↗</a></div></div>`;
+  $('#l-pin').onclick=()=>{ L.pinned=!L.pinned; lSave(); setHH(); lVideo(); };
+  $('#l-unload').onclick=()=>{ L.video=''; $('#l-yt').value=''; lSave(); lVideo(); };
+}
+function lSteps(){
+  const st=[['answer','1 · Answer','ตอบคำถาม'],['check','2 · Check','ตรวจคำตอบ'],['result','3 · Band','ผลคะแนน']];
+  $('#l-steps').innerHTML=st.map(([m,t,th])=>`<button class="btn" data-m="${m}" aria-pressed="${L.mode===m}">${t} <small lang="th">${th}</small></button>`).join('');
+}
+function lGo(mode){ L.mode=mode; lSave(); lRender(); window.scrollTo({top:$('#l-steps').offsetTop-90,behavior:'smooth'}); }
+function lRows(){
+  const p=L.part, check=L.mode==='check';
+  let h=`<div class="qpanel"><h2>Part ${p+1}</h2><p class="sub">Questions ${p*10+1}–${p*10+10}${check?(L.checkMode==='tick'?' · <span lang="th">แตะ ✓ ถ้าถูก แตะ ✗ ถ้าผิด</span>':' · <span lang="th">ใส่เฉลยแล้วระบบจะตรวจให้ แตะปุ่มด้านขวาเพื่อแก้ผลเอง</span>'):' · <span lang="th">กด Enter เพื่อไปข้อถัดไป</span>'}</p>`;
+  for(let i=p*10;i<p*10+10;i++){ const m=check?markOf(i):null;
+    h+=`<div class="qrow ${check?(L.checkMode==='tick'?'tickrow':'check'):''} ${m||''}" data-row="${i}"><span class="qnum">${i+1}</span>
+     <input class="ans" data-i="${i}" value="${esc(L.ans[i])}" placeholder="Your answer" aria-label="Your answer to question ${i+1}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+     ${check&&L.checkMode==='tick'?`<div class="tick" role="group" aria-label="Mark question ${i+1}"><button class="tk r ${m==='r'?'on':''}" data-t="r" data-i="${i}" aria-pressed="${m==='r'}" aria-label="Question ${i+1} correct">✓</button><button class="tk w ${m==='w'?'on':''}" data-t="w" data-i="${i}" aria-pressed="${m==='w'}" aria-label="Question ${i+1} wrong">✗</button></div>`:''}
+     ${check&&L.checkMode==='key'?`<input class="key" data-i="${i}" value="${esc(L.key[i])}" placeholder="Correct answer" aria-label="Correct answer for question ${i+1}" autocomplete="off" autocapitalize="off" spellcheck="false">
+     <button class="mark ${m||''} ${L.ov[i]?'ov':''}" data-i="${i}" aria-label="Question ${i+1}: ${m==='r'?'correct':m==='w'?'wrong':'not marked'}. Tap to change.">${m==='r'?'✓':m==='w'?'✗':'–'}</button>`:''}</div>`; }
+  const last=p===3;
+  h+=`<div class="actions" style="justify-content:space-between;margin-top:12px">
+    ${p>0?`<button class="btn" data-part="${p-1}">‹ Part ${p}</button>`:'<span></span>'}
+    ${last ? (check?`<button class="btn primary" data-go="result">See my band score</button>`:`<button class="btn primary" data-go="check">Finish & check answers</button>`)
+           : `<button class="btn primary" data-part="${p+1}">Part ${p+2} ›</button>`}</div></div>`;
+  return h;
+}
+function lKeyPanel(){
+  const filled=L.key.filter(k=>String(k).trim()).length;
+  return `<details class="panel keypaste" ${filled?'':'open'}><summary>Paste the whole answer key <span lang="th" style="font-weight:400;color:var(--muted)">· วางเฉลยทั้งชุดทีเดียว (${filled}/40)</span></summary>
+   <textarea id="l-keytext" placeholder="1 Johnson&#10;2 15 May&#10;3 B&#10;4 (the) station / train station&#10;…" aria-label="Answer key, one answer per line"></textarea>
+   <div class="actions"><button class="btn primary" id="l-keyapply">Apply key</button><button class="btn" id="l-keyclear">Clear key</button></div>
+   <p class="small" lang="th">บรรทัดละ 1 ข้อ ใส่เลขข้อนำหน้าหรือไม่ก็ได้ · คำตอบที่รับได้หลายแบบคั่นด้วย / · คำที่ใส่หรือไม่ใส่ก็ได้ให้ใส่วงเล็บ เช่น (the) station · ข้อเลือกหลายตัวเลือกพิมพ์ B, D (ลำดับไม่สำคัญ) · ไม่สนตัวพิมพ์เล็กใหญ่ แต่ต้องสะกดถูก</p></details>`;
+}
+function lResult(){
+  const {r,per,unmarked}=lScore(), b=bandOf(r);
+  const wrong=[...Array(40).keys()].filter(i=>markOf(i)==='w');
+  const hitRow=BANDS.findIndex(([m])=>r>=m);
+  return `<div class="lres">
+   <div class="panel bandcard"><div class="small" style="margin:0">${esc(L.name||'Listening test')}</div>
+    <div class="big">${fmtBand(b)}</div><div class="raw">${r} / 40 correct</div>
+    ${unmarked?`<p class="small" lang="th">ยังไม่ได้ตรวจ ${unmarked} ข้อ ${L.checkMode==='tick'?'(ยังไม่ได้ติ๊ก ✓ หรือ ✗)':L.checkMode==='key'?'(ยังไม่มีเฉลย)':'(ยังไม่ได้เลือกวิธีตรวจ)'} จะนับเป็นผิด</p>`:''}
+    ${b==null?`<p class="small" lang="th">ตารางทางการเริ่มที่ 11 ข้อ = Band 4.0</p>`:''}
+    <div class="parts">${per.map((n,i)=>`<div class="prow"><b>Part ${i+1}</b><div class="track"><i style="width:${n*10}%"></i></div><small>${n}/10</small></div>`).join('')}</div>
+    <div class="actions" style="justify-content:center;margin-top:16px"><button class="btn primary" id="l-savehist">Save to history</button><button class="btn" id="l-new">Start a new test</button></div>
+   </div>
+   <div class="panel"><h3>Score conversion <span lang="th" style="font-weight:400;color:var(--muted);font-size:.85rem">· เกณฑ์จาก IELTS (IDP)</span></h3>
+    <table class="ctable"><thead><tr><th>Correct answers</th><th>Band</th></tr></thead><tbody>
+    ${BANDS.map(([m,bb],i)=>{ const hi=i===0?40:BANDS[i-1][0]-1; return `<tr class="${i===hitRow?'hit':''}"><td>${m===hi?m:m+'–'+hi}</td><td>${bb.toFixed(1)}</td></tr>`; }).join('')}
+    </tbody></table><p class="small">Average marks needed per band; the exact cut-off can vary slightly from test to test. <span lang="th">ตัวเลขนี้เป็นค่าเฉลี่ย ข้อสอบจริงแต่ละชุดอาจต่างกันเล็กน้อย</span></p></div>
+   <div class="panel"><h3>Review ${wrong.length} wrong answer${wrong.length===1?'':'s'} <span lang="th" style="font-weight:400;color:var(--muted);font-size:.85rem">· ข้อที่ผิด</span></h3>
+    ${wrong.length?`<ul class="wlist">${wrong.map(i=>`<li><span class="qnum">${i+1}</span><span>${L.ans[i]?`<s>${esc(L.ans[i])}</s>`:'<i style="color:var(--muted)">blank</i>'} → <b>${esc(L.key[i]||'—')}</b></span></li>`).join('')}</ul>`:'<p class="small">No wrong answers marked. 🎉</p>'}</div>
+   <div class="panel"><h3>History <span lang="th" style="font-weight:400;color:var(--muted);font-size:.85rem">· ประวัติการทำ (เก็บในเครื่องนี้)</span></h3>
+    ${lHist.length?`<ul class="wlist hist">${lHist.map((h,i)=>`<li><span>${esc(new Date(h.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'}))} · ${esc(h.name||'Listening test')}</span><small>${h.score}/40</small><b>${fmtBand(h.band)}</b><button data-del="${i}" aria-label="Delete this result">×</button></li>`).join('')}</ul>`:'<p class="small">Saved results appear here so you can track your progress.</p>'}</div>
+  </div>`;
+}
+
+function lCheckHead(){
+  const opts=[['key','Paste the answer key','วางเฉลยทั้งชุด ระบบตรวจให้อัตโนมัติ'],['tick','Tick each answer myself','ดูเฉลยจากคลิปแล้วติ๊ก ✓ / ✗ เองทีละข้อ']];
+  if(!L.checkMode) return `<div class="panel cmchoose"><h3>How do you want to check? <span lang="th" style="font-weight:400;color:var(--muted);font-size:.9rem">· เลือกวิธีตรวจคำตอบ</span></h3>
+    <div class="cmgrid">${opts.map(([v,t,th])=>`<button class="cmopt" data-cm="${v}"><b>${t}</b><span lang="th">${th}</span></button>`).join('')}</div></div>`;
+  const seg=`<div class="seg" role="radiogroup" aria-label="Checking method">${opts.map(([v,t])=>`<button role="radio" data-cm="${v}" aria-checked="${L.checkMode===v}">${t}</button>`).join('')}</div>`;
+  if(L.checkMode==='key') return seg+lKeyPanel();
+  const done=L.tick.filter(Boolean).length;
+  return seg+`<div class="panel keypaste"><b>Tick each answer</b> <span lang="th" style="color:var(--muted)">· ตรวจไปแล้ว ${done}/40 ข้อ</span>
+    <p class="small" lang="th">แตะ ✓ ถ้าถูก แตะ ✗ ถ้าผิด แตะซ้ำเพื่อยกเลิก · ถ้าผิดแค่ไม่กี่ข้อ ติ๊ก ✗ ข้อที่ผิดก่อน แล้วกด “Mark the rest correct”</p>
+    <div class="actions"><button class="btn primary" id="l-tickall">Mark the rest correct</button><button class="btn" id="l-tickclear">Clear all ticks</button></div></div>`;
+}
+function lNav(){
+  const nav=$('#l-nav'); let h='';
+  for(let p=0;p<4;p++){
+    if(p===L.part && L.mode!=='result'){ h+=`<span class="pt cur">Part ${p+1}</span>`;
+      for(let i=p*10;i<p*10+10;i++){ const m=L.mode==='check'?markOf(i):null; h+=`<button class="num ${m||(norm(L.ans[i])?'done':'')}" data-q="${i}" aria-label="Go to question ${i+1}">${i+1}</button>`; } }
+    else { const n=L.ans.slice(p*10,p*10+10).filter(x=>norm(x)).length; h+=`<button class="pt" data-pt="${p}">Part ${p+1} · ${n}/10</button>`; }
+  }
+  h+=`<span class="count small" style="margin:0 0 0 auto">${L.ans.filter(x=>norm(x)).length}/40 answered</span>`;
+  nav.innerHTML=h;
+}
+function lRender(){
+  lSteps();
+  const body=$('#l-body');
+  if(L.mode==='result') body.innerHTML=lResult();
+  else if(L.mode==='check') body.innerHTML=lCheckHead()+(L.checkMode?lRows():'');
+  else body.innerHTML=lRows();
+  lNav();
+}
+function lFocus(i){ if(Math.floor(i/10)!==L.part || L.mode==='result'){ if(L.mode==='result') L.mode='answer'; L.part=Math.floor(i/10); lSave(); lRender(); }
+  const el=$(`#l-body .ans[data-i="${i}"]`); if(el){ el.focus(); el.scrollIntoView({block:'center',behavior:'smooth'}); } }
+function lRowUpdate(i){
+  const row=$(`#l-body [data-row="${i}"]`); if(!row || L.mode!=='check') return; const m=markOf(i);
+  row.classList.remove('r','w'); if(m) row.classList.add(m);
+  if(L.checkMode==='tick'){ row.querySelectorAll('.tk').forEach(t=>{ const on=t.dataset.t===m; t.classList.toggle('on',on); t.setAttribute('aria-pressed',on); }); return; }
+  const b=row.querySelector('.mark'); b.className=`mark ${m||''} ${L.ov[i]?'ov':''}`; b.textContent=m==='r'?'✓':m==='w'?'✗':'–';
+  b.setAttribute('aria-label',`Question ${i+1}: ${m==='r'?'correct':m==='w'?'wrong':'not marked'}. Tap to change.`);
+}
+function lInit(){
+  $('#l-name').value=L.name; if(L.video) $('#l-yt').value='https://youtu.be/'+L.video;
+  $('#l-name').oninput=e=>{ L.name=e.target.value; lSave(); };
+  const load=()=>{ const id=ytId($('#l-yt').value); if(!id){ toast('Paste a YouTube link first'); return; } L.video=id; lSave(); lVideo(); setHH(); };
+  $('#l-load').onclick=load; $('#l-yt').onkeydown=e=>{ if(e.key==='Enter') load(); };
+  $('#l-steps').onclick=e=>{ const b=e.target.closest('[data-m]'); if(!b) return; if(b.dataset.m==='check' && L.mode!=='check') L.part=0; lGo(b.dataset.m); };
+  $('#l-nav').onclick=e=>{ const q=e.target.closest('[data-q]'); if(q) return lFocus(+q.dataset.q); const pt=e.target.closest('[data-pt]'); if(pt){ if(L.mode==='result') L.mode='answer'; L.part=+pt.dataset.pt; lSave(); lRender(); } };
+  const body=$('#l-body');
+  body.addEventListener('input',e=>{ const t=e.target, i=+t.dataset.i; if(t.classList.contains('ans')){ L.ans[i]=t.value; } else if(t.classList.contains('key')){ L.key[i]=t.value; } else return;
+    lSave(); lRowUpdate(i); lNav(); });
+  body.addEventListener('keydown',e=>{ const t=e.target; if(e.key!=='Enter' || !(t.classList.contains('ans')||t.classList.contains('key'))) return; e.preventDefault();
+    const i=+t.dataset.i; if(i>=39){ t.blur(); return; } const cls=t.classList.contains('key')?'key':'ans';
+    if((i+1)%10===0){ L.part++; lSave(); lRender(); } $(`#l-body .${cls}[data-i="${i+1}"]`)?.focus(); });
+  body.addEventListener('click',async e=>{
+    const t=e.target;
+    const cm=t.closest('[data-cm]'); if(cm){ L.checkMode=cm.dataset.cm; L.part=0; lSave(); lRender(); return; }
+    const tk=t.closest('.tk'); if(tk){ const i=+tk.dataset.i; L.tick[i]= L.tick[i]===tk.dataset.t ? null : tk.dataset.t; lSave(); lRowUpdate(i); lNav(); return; }
+    if(t.id==='l-tickall'){ let n=0; for(let i=0;i<40;i++) if(!L.tick[i]){ L.tick[i]='r'; n++; } lSave(); lRender(); toast(`Marked ${n} question${n===1?'':'s'} as correct`); return; }
+    if(t.id==='l-tickclear'){ if(!t.dataset.arm){ t.dataset.arm=1; t.textContent='Tap again to clear'; setTimeout(()=>{ if(t.isConnected){ delete t.dataset.arm; t.textContent='Clear all ticks'; } },3000); return; }
+      L.tick=Array(40).fill(null); lSave(); lRender(); return; }
+    const mk=t.closest('.mark'); if(mk){ const i=+mk.dataset.i; L.ov[i]= L.ov[i]==null?'r': L.ov[i]==='r'?'w':null; lSave(); lRowUpdate(i); lNav(); return; }
+    const pb=t.closest('[data-part]'); if(pb){ L.part=+pb.dataset.part; lSave(); lRender(); $('#l-body .ans')?.focus({preventScroll:true}); window.scrollTo({top:$('#l-steps').offsetTop-90,behavior:'smooth'}); return; }
+    const go=t.closest('[data-go]'); if(go){ if(go.dataset.go==='check') L.part=0; lGo(go.dataset.go); return; }
+    if(t.id==='l-keyapply'){ const lines=$('#l-keytext').value.split(/\n/).map(x=>x.trim()).filter(Boolean); let next=0, n=0;
+      for(const line of lines){ const m=line.match(/^(?:q\s*)?(\d{1,2})\s*[.):\-]?\s+(.*)$/i); let idx, val;
+        if(m && +m[1]>=1 && +m[1]<=40){ idx=+m[1]-1; val=m[2]; } else { idx=next; val=line; }
+        if(idx>39) break; L.key[idx]=val.trim(); next=idx+1; n++; }
+      lSave(); lRender(); toast(n?`Answer key applied to ${n} question${n===1?'':'s'}`:'Nothing to apply'); return; }
+    if(t.id==='l-keyclear'){ if(!t.dataset.arm){ t.dataset.arm=1; t.textContent='Tap again to clear'; setTimeout(()=>{ if(t.isConnected){ delete t.dataset.arm; t.textContent='Clear key'; } },3000); return; }
+      L.key=Array(40).fill(''); L.ov=Array(40).fill(null); lSave(); lRender(); return; }
+    if(t.id==='l-savehist'){ const {r}=lScore(); lHist.unshift({date:new Date().toISOString(),name:L.name,score:r,band:bandOf(r)}); lHist=lHist.slice(0,50); store.set('l.history',lHist); lRender(); toast('Result saved'); return; }
+    if(t.id==='l-new'){ if(!t.dataset.arm){ t.dataset.arm=1; t.textContent='Tap again to clear answers'; setTimeout(()=>{ if(t.isConnected){ delete t.dataset.arm; t.textContent='Start a new test'; } },3000); return; }
+      const keep={video:'',pinned:L.pinned}; Object.assign(L,blankL(),keep); $('#l-name').value=''; $('#l-yt').value=''; lSave(); lVideo(); lRender(); toast('Ready for a new test'); return; }
+    const del=t.closest('[data-del]'); if(del){ lHist.splice(+del.dataset.del,1); store.set('l.history',lHist); lRender(); }
+  });
+  lVideo(); lRender(); setHH();
+}
+
 /* ===================== TABS & KEYS ===================== */
-const TABS=['vocab','synonyms','writing'];
+const TABS=['vocab','synonyms','writing','listening'];
 function show(id){ if(!TABS.includes(id)) id='vocab';
   TABS.forEach(t=>{ $('#sec-'+t).hidden=t!==id; $('#tab-'+t).setAttribute('aria-selected',t===id); $('#tab-'+t).tabIndex=t===id?0:-1; });
-  store.set('tab',id); if(location.hash.slice(1)!==id){ try{ history.replaceState(null,'','#'+id); }catch(e){} } requestAnimationFrame(()=>window.scrollTo(0,0)); }
+  store.set('tab',id); if(location.hash.slice(1)!==id){ try{ history.replaceState(null,'','#'+id); }catch(e){} } requestAnimationFrame(()=>{ window.scrollTo(0,0); setHH(); }); }
 document.querySelector('nav').addEventListener('click',e=>{ const b=e.target.closest('[role=tab]'); if(b) show(b.id.slice(4)); });
 document.querySelector('nav').addEventListener('keydown',e=>{ if(!['ArrowLeft','ArrowRight'].includes(e.key)) return; const cur=TABS.findIndex(t=>!$('#sec-'+t).hidden);
-  const n=TABS[(cur+(e.key==='ArrowRight'?1:-1)+3)%3]; show(n); $('#tab-'+n).focus(); e.stopPropagation(); });
+  const n=TABS[(cur+(e.key==='ArrowRight'?1:-1)+TABS.length)%TABS.length]; show(n); $('#tab-'+n).focus(); e.stopPropagation(); });
 window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
 document.addEventListener('keydown',e=>{
   if(typing(e) || e.altKey || e.ctrlKey || e.metaKey) return;
@@ -1553,7 +1818,7 @@ document.addEventListener('keydown',e=>{
   if(sec==='synonyms'){ if(e.key===' '){ e.preventDefault(); sFlip(); } else if(e.key==='ArrowRight') sGo(1); else if(e.key==='ArrowLeft') sGo(-1); }
 });
 
-vInit(); sInit(); wPicker(); wRender();
+vInit(); sInit(); wPicker(); wRender(); lInit();
 let startTab='vocab'; try{ startTab=location.hash.slice(1) || store.get('tab','vocab'); }catch(e){}
 show(startTab);
 </script>
